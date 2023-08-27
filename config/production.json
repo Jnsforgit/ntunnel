@@ -1,0 +1,8 @@
+{
+    "appname": "客户端代理", 
+    "server": {
+        "listen": 8090,
+        "listen_ssl": true,
+        "host":"127.0.0.1"
+    }
+}

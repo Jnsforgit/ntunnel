@@ -1,12 +1,9 @@
 #!/usr/bin/env node
  
-/**
- * Module dependencies.
- */
- 
+const config = require('config')
 const program = require('commander');
-
-var logger = require('./log')
+const logger = require('./log')
+const tunneler = require('./tunneler')
 
 function parseCmdArgs(){
     program
@@ -19,8 +16,9 @@ function parseCmdArgs(){
 }
 
 function main(){
-    logger.info("Strating ntunnel ......");
+    logger.info(`Strating ntunnel app [${config.get('appname')}] with ${process.env.NODE_ENV} ......`);
     parseCmdArgs();
+    tunneler.start();
 }
 
 main()
